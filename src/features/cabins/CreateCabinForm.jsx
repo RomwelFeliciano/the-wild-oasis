@@ -8,13 +8,13 @@ import FormRow from '../../ui/FormRow';
 import { useForm } from 'react-hook-form';
 
 import { useCreateCabin } from './useCreateCabin';
-import { useEditCabin } from './useEditCabin';
+import { useUpdateCabin } from './useUpdateCabin';
 
 function CreateCabinForm({ cabinToEdit = {} }) {
   const { isCreating, createCabin } = useCreateCabin();
-  const { isEditing, editCabin } = useEditCabin();
+  const { isUpdating, updateCabin } = useUpdateCabin();
 
-  const isWorking = isCreating || isEditing;
+  const isWorking = isCreating || isUpdating;
 
   const { id: editId, ...editValues } = cabinToEdit;
   const isEditSession = Boolean(editId);
@@ -30,7 +30,7 @@ function CreateCabinForm({ cabinToEdit = {} }) {
 
     // console.log(data);
     if (isEditSession)
-      editCabin(
+      updateCabin(
         { newCabinData: { ...data, image }, id: editId },
         {
           onSuccess: (data) => reset(),
