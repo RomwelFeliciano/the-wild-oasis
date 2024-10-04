@@ -5,10 +5,10 @@ import Heading from '../ui/Heading';
 
 const LoginLayout = styled.main`
   min-height: 100vh;
-  margin-top: -120px;
+  padding-top: 12rem;
   display: grid;
   grid-template-columns: 48rem;
-  align-content: center;
+  align-content: start;
   justify-content: center;
   gap: 3.2rem;
   background-color: var(--color-grey-50);
